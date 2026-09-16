@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +20,12 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "S&V Events | Muy pronto",
+  title: {
+    default: "S&V Events | Organització de casaments i esdeveniments",
+    template: "%s | S&V Events",
+  },
   description:
-    "La web de S&V Events, organización de bodas y eventos, estará disponible muy pronto.",
+    "S&V Events organitza casaments i esdeveniments a mida a Girona i la Costa Brava. Creem moments, organitzem experiències.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -29,7 +34,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="es"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="flex min-h-full flex-col bg-background text-navy">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

@@ -1,70 +1,199 @@
+import Image from "next/image";
+import Link from "next/link";
+
+const values = [
+  {
+    title: "Professionalitat",
+    text: "Treballem de manera responsable, organitzada i rigorosa en totes les fases.",
+  },
+  {
+    title: "Creativitat",
+    text: "Idees originals i solucions que fan que cada celebració sigui única.",
+  },
+  {
+    title: "Compromís",
+    text: "Ens impliquem en cada projecte i complim els acords amb els clients.",
+  },
+  {
+    title: "Qualitat",
+    text: "Cura de tots els detalls per garantir la satisfacció del client.",
+  },
+];
+
+const serviceCards = [
+  {
+    title: "Casaments",
+    text: "Organització integral, des de la cerimònia fins a l'última cançó de la festa.",
+  },
+  {
+    title: "Celebracions",
+    text: "Aniversaris, comunions, graduacions i celebracions familiars a mida.",
+  },
+  {
+    title: "Esdeveniments corporatius",
+    text: "Actes d'empresa amb la mateixa cura pel detall que una gran celebració.",
+  },
+];
+
 export default function Home() {
   return (
-    <div className="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden bg-white px-6 text-center text-neutral-900">
-      {/* Corner floral flourishes */}
-      <svg
-        aria-hidden
-        className="pointer-events-none absolute -left-6 -top-6 h-28 w-28 text-neutral-200 sm:h-40 sm:w-40"
-        viewBox="0 0 160 160"
-        fill="none"
-      >
-        <path
-          d="M10 10c40 0 60 20 60 60M10 10c0 40 20 60 60 60M10 10c20 8 30 22 30 40M10 10c8 20 22 30 40 30"
-          stroke="currentColor"
-          strokeWidth="1"
+    <div>
+      {/* Hero */}
+      <section className="relative flex h-[92vh] min-h-[560px] w-full items-center justify-center overflow-hidden">
+        <Image
+          src="/images/hero-ceremonia.jpg"
+          alt="Cerimònia de casament davant el mar"
+          fill
+          priority
+          className="object-cover"
         />
-        <circle cx="10" cy="10" r="3" fill="currentColor" />
-      </svg>
-      <svg
-        aria-hidden
-        className="pointer-events-none absolute -bottom-6 -right-6 h-28 w-28 rotate-180 text-neutral-200 sm:h-40 sm:w-40"
-        viewBox="0 0 160 160"
-        fill="none"
-      >
-        <path
-          d="M10 10c40 0 60 20 60 60M10 10c0 40 20 60 60 60M10 10c20 8 30 22 30 40M10 10c8 20 22 30 40 30"
-          stroke="currentColor"
-          strokeWidth="1"
-        />
-        <circle cx="10" cy="10" r="3" fill="currentColor" />
-      </svg>
-
-      <main className="flex flex-col items-center">
-        <p className="text-[0.65rem] font-light uppercase tracking-[0.5em] text-neutral-400 sm:text-xs">
-          Bodas &amp; Eventos
-        </p>
-
-        <h1 className="mt-6 font-serif text-6xl font-medium tracking-wide text-neutral-900 sm:text-8xl">
-          S <span className="mx-2 text-neutral-900">&amp;</span> V
-        </h1>
-
-        <p className="mt-3 text-xs font-light uppercase tracking-[0.6em] text-neutral-500 sm:text-sm">
-          Events
-        </p>
-
-        {/* Divider with interlocking rings */}
-        <div className="mt-10 flex items-center gap-4 sm:mt-12">
-          <span className="h-px w-10 bg-neutral-300 sm:w-16" />
-          <svg
-            aria-hidden
-            className="h-5 w-8 text-neutral-400"
-            viewBox="0 0 40 24"
-            fill="none"
-          >
-            <circle cx="15" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" />
-            <circle cx="25" cy="12" r="9" stroke="currentColor" strokeWidth="1.4" />
-          </svg>
-          <span className="h-px w-10 bg-neutral-300 sm:w-16" />
+        <div className="absolute inset-0 bg-navy/55" />
+        <div className="relative z-10 flex flex-col items-center px-6 text-center text-[#f8f5ef]">
+          <p className="text-xs font-light uppercase tracking-[0.5em] text-champagne">
+            Girona &amp; Costa Brava
+          </p>
+          <h1 className="mt-6 font-serif text-5xl font-medium tracking-wide sm:text-7xl">
+            S <span className="text-champagne">&amp;</span> V Events
+          </h1>
+          <p className="mt-6 max-w-lg font-serif text-lg italic text-[#f8f5ef]/90 sm:text-xl">
+            &ldquo;Creem moments, organitzem experiències&rdquo;
+          </p>
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <Link
+              href="/casament-demo"
+              className="rounded-full bg-champagne px-8 py-3 text-xs font-medium uppercase tracking-[0.25em] text-navy transition-colors hover:bg-[#c9b691]"
+            >
+              Veure un casament
+            </Link>
+            <Link
+              href="/serveis"
+              className="rounded-full border border-[#f8f5ef]/70 px-8 py-3 text-xs font-light uppercase tracking-[0.25em] text-[#f8f5ef] transition-colors hover:bg-[#f8f5ef]/10"
+            >
+              Els nostres serveis
+            </Link>
+          </div>
         </div>
+      </section>
 
-        <h2 className="mt-10 font-serif text-xl font-normal text-neutral-800 sm:mt-12 sm:text-3xl">
-          Muy pronto, algo especial
+      {/* Intro */}
+      <section className="mx-auto max-w-3xl px-6 py-24 text-center sm:px-10">
+        <p className="text-xs font-light uppercase tracking-[0.4em] text-champagne">
+          Benvinguts
+        </p>
+        <h2 className="mt-6 font-serif text-3xl text-navy sm:text-4xl">
+          Organitzem esdeveniments perquè tu només et preocupis de gaudir-los
         </h2>
-      </main>
+        <p className="mt-6 text-base font-light leading-relaxed text-navy/70">
+          A S&amp;V Events planifiquem, coordinem i cuidem cada detall del teu
+          casament o celebració. Un servei proper i personalitzat, pensat per
+          transformar les teves idees en una experiència inoblidable, sense
+          l&apos;estrès que suposa organitzar-ho tot pel teu compte.
+        </p>
+        <Link
+          href="/nosaltres"
+          className="mt-8 inline-block border-b border-champagne pb-1 text-xs font-light uppercase tracking-[0.3em] text-navy transition-colors hover:text-champagne"
+        >
+          Coneix-nos
+        </Link>
+      </section>
 
-      <p className="absolute bottom-6 text-[0.6rem] font-light uppercase tracking-[0.35em] text-neutral-300 sm:bottom-8 sm:text-xs">
-        S&amp;V Events — Próximamente
-      </p>
+      {/* Values strip */}
+      <section className="bg-champagne-light/60 py-20">
+        <div className="mx-auto grid max-w-5xl gap-10 px-6 sm:grid-cols-4 sm:px-10">
+          {values.map((v) => (
+            <div key={v.title} className="text-center">
+              <span className="mx-auto block h-1.5 w-1.5 rotate-45 bg-champagne" />
+              <h3 className="mt-4 font-serif text-lg text-navy">{v.title}</h3>
+              <p className="mt-2 text-sm font-light leading-relaxed text-navy/60">
+                {v.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Services preview */}
+      <section className="mx-auto max-w-6xl px-6 py-24 sm:px-10">
+        <div className="text-center">
+          <p className="text-xs font-light uppercase tracking-[0.4em] text-champagne">
+            Serveis
+          </p>
+          <h2 className="mt-4 font-serif text-3xl text-navy sm:text-4xl">
+            Un servei a mida per a cada celebració
+          </h2>
+        </div>
+        <div className="mt-14 grid gap-8 sm:grid-cols-3">
+          {serviceCards.map((s) => (
+            <div
+              key={s.title}
+              className="border border-champagne/60 p-8 text-center transition-colors hover:border-champagne"
+            >
+              <h3 className="font-serif text-xl text-navy">{s.title}</h3>
+              <p className="mt-3 text-sm font-light leading-relaxed text-navy/60">
+                {s.text}
+              </p>
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link
+            href="/serveis"
+            className="inline-block rounded-full border border-navy px-8 py-3 text-xs font-light uppercase tracking-[0.25em] text-navy transition-colors hover:bg-navy hover:text-background"
+          >
+            Veure tots els serveis
+          </Link>
+        </div>
+      </section>
+
+      {/* Featured wedding */}
+      <section className="relative overflow-hidden">
+        <div className="grid sm:grid-cols-2">
+          <div className="relative h-80 sm:h-auto">
+            <Image
+              src="/images/arco-floral.jpg"
+              alt="Júlia i Josep sota un arc floral"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="flex flex-col items-start justify-center bg-navy px-8 py-16 text-[#f8f5ef] sm:px-14">
+            <p className="text-xs font-light uppercase tracking-[0.4em] text-champagne">
+              Cas real
+            </p>
+            <h2 className="mt-4 font-serif text-3xl sm:text-4xl">
+              El casament de Júlia i Josep
+            </h2>
+            <p className="mt-5 max-w-md text-sm font-light leading-relaxed text-[#f8f5ef]/75">
+              Un casament amb l&apos;essència de la Costa Brava: cerimònia a
+              L&apos;Escala, 134 convidats i una decoració inspirada en els
+              pobles de la costa gironina. Descobreix com el vam organitzar.
+            </p>
+            <Link
+              href="/casament-demo"
+              className="mt-8 rounded-full bg-champagne px-8 py-3 text-xs font-medium uppercase tracking-[0.25em] text-navy transition-colors hover:bg-[#c9b691]"
+            >
+              Descobrir el casament
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="mx-auto max-w-3xl px-6 py-24 text-center sm:px-10">
+        <h2 className="font-serif text-3xl text-navy sm:text-4xl">
+          Parlem del teu esdeveniment?
+        </h2>
+        <p className="mt-4 text-sm font-light leading-relaxed text-navy/60">
+          Escriu-nos i concertem una primera reunió sense compromís al nostre
+          espai de coworking a Girona.
+        </p>
+        <Link
+          href="/contacte"
+          className="mt-8 inline-block rounded-full bg-navy px-10 py-3 text-xs font-light uppercase tracking-[0.25em] text-background transition-colors hover:bg-navy-light"
+        >
+          Contacta amb nosaltres
+        </Link>
+      </section>
     </div>
   );
 }
