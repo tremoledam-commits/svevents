@@ -35,7 +35,7 @@ export default function Home() {
         </p>
 
         <h1 className="mt-6 font-serif text-6xl font-medium tracking-wide text-neutral-900 sm:text-8xl">
-          S <span className="mx-2 italic text-rose-300">&amp;</span> V
+          S <span className="mx-2 text-neutral-900">&amp;</span> V
         </h1>
 
         <p className="mt-3 text-xs font-light uppercase tracking-[0.6em] text-neutral-500 sm:text-sm">
@@ -60,11 +60,6 @@ export default function Home() {
         <h2 className="mt-10 font-serif text-xl font-normal text-neutral-800 sm:mt-12 sm:text-3xl">
           Muy pronto, algo especial
         </h2>
-
-        <p className="mt-4 max-w-xs text-sm font-light leading-relaxed text-neutral-500 sm:max-w-md sm:text-base">
-          Estamos preparando nuestra nueva web para acompañarte en cada
-          detalle del día más importante de tu vida.
-        </p>
       </main>
 
       <p className="absolute bottom-6 text-[0.6rem] font-light uppercase tracking-[0.35em] text-neutral-300 sm:bottom-8 sm:text-xs">
